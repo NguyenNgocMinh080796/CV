@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <div
-        style={{ backgroundColor: "lightblue", padding: "108px 200px" }}
+        style={{ backgroundColor: "lightblue", padding: "70px 200px" }}
       >
         <MenuPage />
       </div>

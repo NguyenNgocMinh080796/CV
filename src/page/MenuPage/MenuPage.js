@@ -1,7 +1,7 @@
 import React from 'react'
 import { UnorderedListOutlined, UserOutlined, CommentOutlined, FileOutlined } from '@ant-design/icons';
 import { Image, Layout, Menu, theme } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import ContentComponent from '../../component/ContentComponent';
 import avt from '../../avatar.jpg'
 
@@ -16,67 +16,69 @@ export default function MenuPage() {
     const navigate = useNavigate()
 
     return (
-        <Layout style={{ height: 450 }}>
-            <Sider
-                breakpoint="lg"
-                collapsedWidth="0"
-                onBreakpoint={(broken) => {
-                    console.log(broken);
-                }}
-                onCollapse={(collapsed, type) => {
-                    console.log(collapsed, type);
-                }}
-            >
-                <Image
-                    width='100%'
-                    src={avt}
-                />
-                <Menu
-                    onClick={(key) => { navigate(key.key) }}
-                    theme="dark"
-                    mode="inline"
-                    items={[
-                        {
-                            key: '/',
-                            label: 'About',
-                            icon: < UserOutlined />,
-                        },
-                        {
-                            key: '/project',
-                            label: 'Learning Project',
-                            icon: <UnorderedListOutlined />,
-                        },
-                        {
-                            key: '/contact',
-                            label: 'Contact',
-                            icon: < CommentOutlined />,
-                        },
-                        {
-                            key: '/cv',
-                            label: 'CV',
-                            icon: <FileOutlined />,
-                        },
-                    ]}
-                />
-            </Sider>
-            <Layout>
-                <Content
-                    style={{
-                        margin: '24px 16px 0',
-                        overflowY: 'auto',
+        <div style={{ height: window.innerHeight }}>
+            <Layout style={{ maxHeight: 600 }}>
+                <Sider
+                    breakpoint="lg"
+                    collapsedWidth="0"
+                    onBreakpoint={(broken) => {
+                        console.log(broken);
+                    }}
+                    onCollapse={(collapsed, type) => {
+                        console.log(collapsed, type);
                     }}
                 >
-                    <div
+                    <Image
+                        width='100%'
+                        src={avt}
+                    />
+                    <Menu
+                        onClick={(key) => { navigate(key.key) }}
+                        theme="dark"
+                        mode="inline"
+                        items={[
+                            {
+                                key: '/',
+                                label: 'About',
+                                icon: < UserOutlined />,
+                            },
+                            {
+                                key: '/project',
+                                label: 'Learning Project',
+                                icon: <UnorderedListOutlined />,
+                            },
+                            {
+                                key: '/contact',
+                                label: 'Contact',
+                                icon: < CommentOutlined />,
+                            },
+                            {
+                                key: '/cv',
+                                label: (<NavLink to='https://www.topcv.vn/xem-cv/BFAJA1FRWgMHUAFXBlECVQEGAVJXUVpRUQBQVg119e' >CV</NavLink>),
+                                icon: <FileOutlined />,
+                            },
+                        ]}
+                    />
+                </Sider>
+                <Layout>
+                    <Content
                         style={{
-                            marginBottom: 15,
-                            height: 900,
-                            background: colorBgContainer,
+                            margin: '24px 16px 10px',
+                            overflowY: 'auto',
                         }}
                     >
-                        <ContentComponent />
-                    </div>
-                </Content>
+                        <div
+                            style={{
+                                marginBottom: 15,
+                                minHeight: window.innerHeight,
+                                background: colorBgContainer,
+                            }}
+                        >
+                            <ContentComponent />
+                        </div>
+                    </Content>
+                </Layout>
             </Layout>
-        </Layout>
+        </div>
     )
 }
