@@ -21,47 +21,6 @@ export default function ProjectComponent() {
                         paddingBottom: 20
                     }}
                 >
-                    {/* quan_ly_nhan_vien */}
-                    <Card
-                        hoverable
-                        style={{
-                            width: 400,
-                        }}
-                        cover={
-                            <img
-                                alt="quan_ly_nhan_vien"
-                                src={quanLy}
-                            />
-                        }
-                        actions={[
-                            <Popover
-                                content={<div style={{ maxWidth: 200 }}>
-                                    <Text strong>Công nghệ sử dụng: </Text>
-                                    <Text>React, Ant Design, React-Router, Redux, Redux Thunk, Axios</Text>
-                                </div>}
-                            >
-                                <SettingOutlined key="setting" />
-                            </Popover>,
-                            <Popover
-                                content={<div style={{ maxWidth: 200 }}>
-                                    <Text strong>Back-end: </Text>
-                                    <Text>API của Trung tâm Đào tạo</Text>
-                                </div>}
-                            >
-                                <i className="fa-solid fa-cloud-arrow-down" />
-                            </Popover>,
-                            <Popover
-                                content={<div style={{ maxWidth: 200 }}>
-                                    <Text strong>Github</Text>
-                                </div>}
-                            >
-                                <NavLink to='https://github.com/NguyenNgocMinh080796/QuanLyNhanVien.git' ><i className="fa-solid fa-link" /></NavLink>
-                            </Popover>,
-                        ]}
-
-                    >
-                        <Meta title="QUẢN LÝ NHÂN VIÊN" description='Dự án demo trang admin quản lý thông tin nhân viên và sinh viên với các chức năng hiển thị, thêm, xóa, sửa' />
-                    </Card>
                     {/* web_xem_phim */}
                     <Card
                         hoverable
@@ -142,6 +101,47 @@ export default function ProjectComponent() {
                         ]}
                     >
                         <Meta title="QUẢN LÝ THÔNG TIN VẬN CHUYỂN" description='Dự án demo trang admin quản lý thông tin vận chuyển hàng với chức năng hiển thị thông tin' />
+                    </Card>
+                    {/* quan_ly_nhan_vien */}
+                    <Card
+                        hoverable
+                        style={{
+                            width: 400,
+                        }}
+                        cover={
+                            <img
+                                alt="quan_ly_nhan_vien"
+                                src={quanLy}
+                            />
+                        }
+                        actions={[
+                            <Popover
+                                content={<div style={{ maxWidth: 200 }}>
+                                    <Text strong>Công nghệ sử dụng: </Text>
+                                    <Text>React, Ant Design, React-Router, Redux, Redux Thunk, Axios</Text>
+                                </div>}
+                            >
+                                <SettingOutlined key="setting" />
+                            </Popover>,
+                            <Popover
+                                content={<div style={{ maxWidth: 200 }}>
+                                    <Text strong>Back-end: </Text>
+                                    <Text>API của Trung tâm Đào tạo</Text>
+                                </div>}
+                            >
+                                <i className="fa-solid fa-cloud-arrow-down" />
+                            </Popover>,
+                            <Popover
+                                content={<div style={{ maxWidth: 200 }}>
+                                    <Text strong>Github</Text>
+                                </div>}
+                            >
+                                <NavLink to='https://github.com/NguyenNgocMinh080796/QuanLyNhanVien.git' ><i className="fa-solid fa-link" /></NavLink>
+                            </Popover>,
+                        ]}
+
+                    >
+                        <Meta title="QUẢN LÝ NHÂN VIÊN" description='Dự án demo trang admin quản lý thông tin nhân viên và sinh viên với các chức năng hiển thị, thêm, xóa, sửa' />
                     </Card>
                 </Space>
             </div >
