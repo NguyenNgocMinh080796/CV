@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import quanLy from '../asset/quanLy.jpeg';
 import movie from '../asset/movie.jpeg';
 import xuatNhap from '../asset/xuatNhap.jpeg';
+import commerce from '../asset/commerce.png'
 
 const { Title, Text } = Typography;
 const { Meta } = Card;
@@ -21,6 +22,47 @@ export default function ProjectComponent() {
                         paddingBottom: 20
                     }}
                 >
+                    {/* web_commerce */}
+                    <Card
+                        hoverable
+                        style={{
+                            width: 400,
+                        }}
+                        cover={
+                            <img
+                                alt="e-commerce"
+                                src={commerce}
+                            />
+                        }
+                        actions={[
+                            <Popover
+                                content={<div style={{ maxWidth: 200 }}>
+                                    <Text strong>Công nghệ sử dụng: </Text>
+                                    <Text>React, Ant Design, React-Router, Redux, Redux Thunk, Axios</Text>
+                                </div>}
+                            >
+                                <SettingOutlined key="setting" />
+                            </Popover>,
+                            <Popover
+                                content={<div style={{ maxWidth: 200 }}>
+                                    <Text strong>Back-end: </Text>
+                                    <Text>API của dummyjson.com</Text>
+                                </div>}
+                            >
+                                <i className="fa-solid fa-cloud-arrow-down" />
+                            </Popover>,
+                            <Popover
+                                content={<div style={{ maxWidth: 200 }}>
+                                    <Text strong>Github</Text>
+                                </div>}
+                            >
+                                <NavLink to='https://github.com/NguyenNgocMinh080796/WebCommerce.git' ><i className="fa-solid fa-link" /></NavLink>
+                            </Popover>,
+                        ]}
+
+                    >
+                        <Meta title="E-COMMERCE WEB" description='Dự án demo lấy cảm hứng từ Youtube' />
+                    </Card>
                     {/* web_xem_phim */}
                     <Card
                         hoverable
